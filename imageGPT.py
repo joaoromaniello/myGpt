@@ -16,5 +16,5 @@ response = openai.Image.create(
 image_url = response['data'][0]['url']
 response = requests.get(image_url)
 
-with open("image" +str(random.randint(0,400))+".jpg", "wb") as f:
+with open("imagem/image" + str(random.randint(0, 400)) + ".jpg", "wb") as f:
     f.write(response.content)
