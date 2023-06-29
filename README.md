@@ -2,7 +2,10 @@
 
 ## Descrição
 
-Este repositório contém exemplos de como interagir com a API OpenAI usando o modelo de linguagem GPT-3.
+Este é um projeto pessoal desenvolvido por João Antônio Nardini Romaniello. O objetivo deste repositório é fornecer exemplos de como interagir com a API OpenAI usando o modelo de linguagem GPT-3. O projeto está estruturado em duas classes principais:
+
+- `imageGPT`: Esta classe é responsável por gerar uma imagem baseada em um prompt fornecido pelo usuário.
+- `textGPT`: Esta classe atua de maneira semelhante ao ChatGPT, com a diferença de que é possível ajustar o temperamento e guiar como o modelo deve agir inicialmente.
 
 ## Requisitos
 
