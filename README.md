@@ -31,15 +31,13 @@ pip install -r requirements.txt
 
 Certifique-se de definir a variável de ambiente `OPENAI_API_KEY` com sua chave API do OpenAI.
 
-Para executar o script principal, use o seguinte comando:
+Para executar os scripts , use o seguinte comando:
 
 ```bash
-python main.py
+python imageGPT.py
+python textGPT.py
 ```
 
-Este script irá interagir com a API OpenAI e produzirá resultados baseados no modelo de linguagem GPT-3.
+Estes scripts vão interagir com a API OpenAI e produzirá resultados baseados no modelo de linguagem GPT-3.
 
-## Contribuições
-
-Contribuições são bem-vindas! Por favor, leia as [regras de contribuição](CONTRIBUTING.md) antes de fazer qualquer alteração.
 
