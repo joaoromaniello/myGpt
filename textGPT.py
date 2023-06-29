@@ -6,6 +6,7 @@ import variables
 
 API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 
+API_KEY = variables.API_KEY
 openai.api_key = variables.API_KEY
 
 def generate_chat_completion(messages, model="gpt-3.5-turbo", temperature=0, max_tokens=None):
