@@ -9,6 +9,7 @@ API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 API_KEY = variables.API_KEY
 openai.api_key = variables.API_KEY
 
+
 def generate_chat_completion(messages, model="gpt-3.5-turbo", temperature=0, max_tokens=None):
     headers = {
         "Content-Type": "application/json",
@@ -32,15 +33,21 @@ def generate_chat_completion(messages, model="gpt-3.5-turbo", temperature=0, max
         raise Exception(f"Error {response.status_code}: {response.text}")
 
 
-messages = [
-    {"role": "system", "content": "Você é uma assistente util. Você está conversando com joão antônio"},
-    {"role": "user", "content": ""}
-]
+def main():
+    messages = [
+        {"role": "system",
+         "content": "Você será um robô que me responderá me tratando igual um rei, e minha namorada (milena) como uma rainha. Meu nome é joão antônio.Você me dará apenas informações verdadeiras. NÃO PODE INVENTAR NEM MENTIR"},
+        {"role": "user", "content": ""}
+    ]
 
-print("========CHAT GPT========")
+    print("========CHAT GPT========")
 
-while(1):
-    _input = input("USER: ")
-    messages[1]["content"] = _input
-    response_text = generate_chat_completion(messages)
-    print("SYSTEM: " +response_text)
+    while 1:
+        _input = input("USER: ")
+        messages[1]["content"] = _input
+        response_text = generate_chat_completion(messages)
+        print("SYSTEM: " + response_text)
+
+
+if __name__ == "__main__":
+    main()
