@@ -1,6 +1,10 @@
+import os
+from tkinter import filedialog
+
 import openai
 import requests
 import json
+import tkinter as tk
 
 import variables
 
@@ -9,6 +13,19 @@ API_ENDPOINT = "https://api.openai.com/v1/chat/completions"
 API_KEY = variables.API_KEY
 openai.api_key = variables.API_KEY
 
+messages = [
+    {"role": "system",
+     "content": "Você será um robô capaz de responder com exatidão às minhas perguntas.Além disso, você vai ser capaz de analisar dados sem precisar de contexto envolvido"}
+]
+
+def fetchDataFromFolder(arq):
+    folder_path = "local_files"  # Caminho da pasta que contém o arquivo
+    file_path = os.path.join(folder_path, arq)  # Caminho completo do arquivo
+
+    with open(file_path, "r") as file:
+        data = file.read()
+
+    return data
 
 def generate_chat_completion(messages, model="gpt-3.5-turbo", temperature=0, max_tokens=None):
     headers = {
@@ -32,16 +49,101 @@ def generate_chat_completion(messages, model="gpt-3.5-turbo", temperature=0, max
     else:
         raise Exception(f"Error {response.status_code}: {response.text}")
 
+def create_instructions_window():
+
+    instruction_text = """
+1. Texto:
+- Use a tela de chat para interagir com o GPT.
+- Clique em "Enviar Arquivo" para upload de json, txt, etc. (certifique-se de que estejam na pasta "local_files").
+- O GPT analisa e responde com base no conteúdo do arquivo.
+
+2. Imagem:
+
+- Insira o prompt de texto na tela de geração de imagens.
+- Clique em "Gerar Imagem" e a aplicação criará uma imagem a partir do texto.
+    """
+
+
+    window = tk.Toplevel()
+    window.title("Instruções")
+    lbl = tk.Label(window, text=instruction_text,anchor='w',width=90)
+    lbl.pack(fill='both')
+
+def create_CPC():
+    window = tk.Tk()
+    window.title("My GPT")
+
+    def select_file():
+        file_path = filedialog.askopenfilename(initialdir=".", title="Selecione um arquivo", filetypes=(
+        ("Arquivos de Texto", "*.txt"), ("Arquivos JSON", "*.json"), ("Todos os arquivos", "*.*")))
+        if file_path:
+            # Chamar a função fetchDataFromFolder para obter o conteúdo do arquivo selecionado
+            file_content = "(Estes dados foram extraidos de um arquivo)Analise o seguinte:\n"+fetchDataFromFolder(file_path)
+
+            # Atualizar o conteúdo do Entry com o conteúdo do arquivo selecionado
+            user_input.delete(0, tk.END)
+            user_input.insert(tk.END, file_content)
+
+    def send_message():
+        message = user_input.get()
+        mensagem = {"role": "user", "content": message}
+        messages.append(mensagem)
+        user_input.delete(0, tk.END)
+
+        # Atualizar o chat_textbox com a mensagem do usuário
+        chat_textbox.config(state="normal")
+        chat_textbox.insert(tk.END, "Você: " + message + "\n", "green")
+        chat_textbox.config(state="disabled")
+
+        # Gerar e atualizar o chat_textbox com a resposta do GPT
+        response = generate_chat_completion(messages)
+        resposta = {"role": "assistant", "content": response}
+
+        messages.append(resposta)
+        chat_textbox.config(state="normal")
+        chat_textbox.insert(tk.END, "GPT: " + response + "\n", "blue")
+        chat_textbox.config(state="disabled")
+
+    chat_textbox = tk.Text(window, height=25, width=80)
+    chat_textbox.config(state="disabled")
+    chat_textbox.grid(row=0, column=0, padx=10, pady=10, columnspan=2)
+    chat_textbox.tag_config("green", foreground="green")
+    chat_textbox.tag_config("blue", foreground="blue")
+
+    user_input = tk.Entry(window, width=70)
+    user_input.grid(row=1, column=0, padx=10, pady=10)
+
+    file_button = tk.Button(window, text="Selecionar Arquivo", command=select_file)
+    file_button.grid(row=2, column=1, padx=10, pady=10)
+
+    send_button = tk.Button(window, text="Enviar", command=send_message)
+    send_button.grid(row=1, column=1, padx=10, pady=10,ipadx=30)
+
+    window.mainloop()
+
+def create_interface():
+    window = tk.Tk()
+    window.title("My local GPT")
+    window.geometry("800x300")
+
+    # Cria um rótulo com o texto
+    lbl = tk.Label(window, text="MY LOCAL GPT",font=("Courier New", 24,'underline'))
+    lbl.grid(row=0, column=0, columnspan=3, pady=(20, 10),padx=(150, 5))
+
+    # Cria os botões
+    btn_instrucoes = tk.Button(window, text="Instruções", width=20, height=5, bd=10, highlightbackground="blue",command=create_instructions_window)
+    btn_imagem = tk.Button(window, text="Imagem", width=15, height=3, bd=10, highlightbackground="blue")
+    btn_texto = tk.Button(window, text="Texto", width=15, height=3, bd=10, highlightbackground="blue",command = create_CPC)
+
+    # Posiciona os botões na grade
+    btn_imagem.grid(row=1, column=0, padx=(160, 5), pady=(60, 10))
+    btn_instrucoes.grid(row=1, column=1, padx=(10, 5), pady=(60, 10))
+    btn_texto.grid(row=1, column=2, padx=(10, 10), pady=(60, 10))
+
+    window.mainloop()
 
 def main():
-    messages = [
-        {"role": "system",
-         "content": "Você será um robô que me responderá me tratando igual um rei, e minha namorada (milena) como uma rainha. Meu nome é joão antônio.Você me dará apenas informações verdadeiras. NÃO PODE INVENTAR NEM MENTIR"},
-        {"role": "user", "content": ""}
-    ]
-
     print("========CHAT GPT========")
-
     while 1:
         _input = input("USER: ")
         messages[1]["content"] = _input
@@ -50,4 +152,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    create_interface()
+    # main()

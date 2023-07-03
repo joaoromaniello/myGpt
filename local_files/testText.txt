@@ -1,0 +1,3 @@
+milena = 22 anos            | gosta de comer pizza
+joão antonio = 21 anos      | gosta de comer pistache
+yago = 10 anos              | gosta de comer azeitona
