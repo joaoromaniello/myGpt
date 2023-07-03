@@ -8,12 +8,12 @@ Este é um projeto pessoal desenvolvido por João Antônio Nardini Romaniello. O
 - `textGPT`: Esta classe atua de maneira semelhante ao ChatGPT, com a diferença de que é possível ajustar o temperamento e guiar como o modelo deve agir inicialmente.
 
 
-### "Chat"
+### Chat
 Na tela de chat, os usuários podem digitar mensagens em um campo de entrada e receber respostas geradas pelo modelo GPT-3. A interface exibe as mensagens em um chat convencional, onde as mensagens do usuário são exibidas em verde e as respostas do GPT-3 em azul.
 
 Além disso, há um botão "Selecionar Arquivo" que permite aos usuários fazer upload de arquivos de texto (como arquivos JSON ou TXT) da pasta "local_files". O conteúdo desses arquivos é analisado pelo GPT-3 e utilizado para gerar respostas mais adequadas.
 
-### "Geração de Imagens"
+### Geração de Imagens
 Na tela de geração de imagens, os usuários podem inserir um texto ou prompt de entrada e o modelo GPT-3 irá gerar uma imagem com base nesse prompt. Após inserir o texto, basta clicar no botão "Gerar Imagem" para visualizar a imagem gerada.
 
 ## Requisitos
@@ -43,10 +43,9 @@ Certifique-se de definir a variável de ambiente `OPENAI_API_KEY` com sua chave 
 Para executar os scripts , use o seguinte comando:
 
 ```bash
-python imageGPT.py
 python textGPT.py
 ```
 
-Estes scripts vão interagir com a API OpenAI e produzirá resultados baseados no modelo de linguagem GPT-3.
+Esse scripts lhe apresentará uma interface com as funções do e especificações do projeto
 
 
