@@ -15,7 +15,7 @@ openai.api_key = variables.API_KEY
 
 messages = [
     {"role": "system",
-     "content": "Você será um robô capaz de responder com exatidão às minhas perguntas.Além disso, você vai ser capaz de analisar dados sem precisar de contexto envolvido"}
+     "content": "oVocê será um robô capaz de responder com exatidão às minhas perguntas.Além diss, você vai ser capaz de analisar dados sem precisar de contexto envolvido"}
 ]
 
 def fetchDataFromFolder(arq):
@@ -69,40 +69,81 @@ def create_instructions_window():
     lbl = tk.Label(window, text=instruction_text,anchor='w',width=90)
     lbl.pack(fill='both')
 
+def reset_messages():
+    global messages
+    messages = [
+        {"role": "system",
+         "content": "Você será um robô capaz de responder com exatidão às minhas perguntas. Além disso, você será capaz de analisar dados sem precisar de contexto envolvido"}
+    ]
+
 def create_CPC():
     window = tk.Tk()
     window.title("My GPT")
 
     def select_file():
         file_path = filedialog.askopenfilename(initialdir=".", title="Selecione um arquivo", filetypes=(
-        ("Arquivos de Texto", "*.txt"), ("Arquivos JSON", "*.json"), ("Todos os arquivos", "*.*")))
+            ("Arquivos de Texto", "*.txt"), ("Arquivos JSON", "*.json"), ("Todos os arquivos", "*.*")))
         if file_path:
-            # Chamar a função fetchDataFromFolder para obter o conteúdo do arquivo selecionado
-            file_content = "(Estes dados foram extraidos de um arquivo)Analise o seguinte:\n"+fetchDataFromFolder(file_path)
-
-            # Atualizar o conteúdo do Entry com o conteúdo do arquivo selecionado
             user_input.delete(0, tk.END)
-            user_input.insert(tk.END, file_content)
+            file_string = f"Arquivo  {file_path} enviado\n"
+            user_input.insert(tk.END,file_string)
 
-    def send_message():
+            # Ler o conteúdo do arquivo
+            with open(file_path, "r") as file:
+                file_content = file.read()
+
+            mensagem = {"role": "user", "content": file_content}
+            messages.append(mensagem)
+            send_file_message(file_string)
+    def send_file_message(string):
+        user_input.delete(0, tk.END)
+
+        chat_textbox.config(state="normal")
+        chat_textbox.insert(tk.END, "Você: " + string + "\n", "green")
+        chat_textbox.config(state="disabled")
+
+        response = generate_chat_completion(messages)
+        chat_textbox.config(state="normal")
+        chat_textbox.insert(tk.END, "GPT: " + response + "\n", "blue")
+        chat_textbox.config(state="disabled")
+
+        chat_textbox.see(tk.END)
+
+        num_lines = chat_textbox.get("1.0", tk.END).count("\n")
+        if num_lines > 100:
+            chat_textbox.delete("1.0", "2.0")
+    def send_message(event=None):
         message = user_input.get()
         mensagem = {"role": "user", "content": message}
         messages.append(mensagem)
         user_input.delete(0, tk.END)
 
-        # Atualizar o chat_textbox com a mensagem do usuário
+        # Atualizando o chat_textbox com a mensagem do usuário
         chat_textbox.config(state="normal")
         chat_textbox.insert(tk.END, "Você: " + message + "\n", "green")
         chat_textbox.config(state="disabled")
 
-        # Gerar e atualizar o chat_textbox com a resposta do GPT
+        # Gerando e atualizando o chat_textbox com a resposta do GPT
         response = generate_chat_completion(messages)
-        resposta = {"role": "assistant", "content": response}
-
-        messages.append(resposta)
         chat_textbox.config(state="normal")
         chat_textbox.insert(tk.END, "GPT: " + response + "\n", "blue")
         chat_textbox.config(state="disabled")
+
+        # Movendo a barra de rolagem para exibir a última mensagem
+        chat_textbox.see(tk.END)
+
+        # Reduzindo o número de linhas exibidas no chat_textbox
+        num_lines = chat_textbox.get("1.0", tk.END).count("\n")
+        if num_lines > 100:  # Ajuste o número conforme necessário
+            chat_textbox.delete("1.0", "2.0")
+    def reset_messages():
+        global messages
+        messages = [
+            {"role": "system",
+             "content": "Você será um robô capaz de responder com exatidão às minhas perguntas. Além disso, você será capaz de analisar dados sem precisar de contexto envolvido"}
+        ]
+
+        print(messages)
 
     chat_textbox = tk.Text(window, height=25, width=80)
     chat_textbox.config(state="disabled")
@@ -118,6 +159,10 @@ def create_CPC():
 
     send_button = tk.Button(window, text="Enviar", command=send_message)
     send_button.grid(row=1, column=1, padx=10, pady=10,ipadx=30)
+
+    reset_button = tk.Button(window, text="Resetar cache", command=reset_messages, bg="red")
+
+    reset_button.grid(row=2, column=0, padx=10, pady=10)
 
     window.mainloop()
 

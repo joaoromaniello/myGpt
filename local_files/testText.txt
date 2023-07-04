@@ -1,3 +1,162 @@
-milena = 22 anos            | gosta de comer pizza
-joão antonio = 21 anos      | gosta de comer pistache
-yago = 10 anos              | gosta de comer azeitona
+Resultado Final,1,'2.75
+Resultado Final,X,'3.25
+Resultado Final,2,'2.62
+Total de Gols Mais/Menos,Mais de 2.5,'2.18
+Total de Gols Mais/Menos,Menos de 2.5,'1.70
+Ambas equipes Marcam,Sim,'1.87
+Ambas equipes Marcam,Não,'1.87
+Ambas equipes Marcam ou Mais de 2.5,Sim,'1.65
+Ambas equipes Marcam ou Mais de 2.5,Não (2-0| 1-0| 0-0| 0-1 ou 0-2),'2.15
+Chance Dupla,1X,'1.52
+Chance Dupla,X2,'1.47
+Chance Dupla,12,'1.35
+Empate Anula,Vasco da Gama,'1.91
+Empate Anula,Cruzeiro,'1.83
+Total de Gols Mais/Menos (alternativas),Mais de 0.5,'1.09
+Total de Gols Mais/Menos (alternativas),Menos de 0.5,'7.70
+Total de Gols Mais/Menos (alternativas),Mais de 1.5,'1.40
+Total de Gols Mais/Menos (alternativas),Menos de 1.5,'3.00
+Total de Gols Mais/Menos (alternativas),Mais de 3.5,'3.90
+Total de Gols Mais/Menos (alternativas),Menos de 3.5,'1.26
+Total de Gols Mais/Menos (alternativas),Mais de 4.5,'7.40
+Total de Gols Mais/Menos (alternativas),Menos de 4.5,'1.09
+Total de Gols Mais/Menos (alternativas),Mais de 5.5,'13.00
+Total de Gols Mais/Menos (alternativas),Menos de 5.5,'1.03
+Resultado Final/Total de gols (1.5),1 e Mais de 1.5,'3.65
+Resultado Final/Total de gols (1.5),1 e Menos de 1.5,'7.50
+Resultado Final/Total de gols (1.5),2 e Mais de 1.5,'3.40
+Resultado Final/Total de gols (1.5),2 e Menos de 1.5,'7.60
+Resultado Final/Total de gols (1.5),X e Mais de 1.5,'4.35
+Resultado Final/Total de gols (1.5),X e Menos de 1.5,'7.70
+Resultado Final/Total de gols (2.5),1 e Mais de 2.5,'4.75
+Resultado Final/Total de gols (2.5),1 e Menos de 2.5,'5.00
+Resultado Final/Total de gols (2.5),2 e Mais de 2.5,'4.40
+Resultado Final/Total de gols (2.5),2 e Menos de 2.5,'5.00
+Resultado Final/Total de gols (2.5),X e Mais de 2.5,'13.00
+Resultado Final/Total de gols (2.5),X e Menos de 2.5,'3.80
+Resultado Final/Total de gols (3.5),1 e Mais de 3.5,'10.00
+Resultado Final/Total de gols (3.5),1 e Menos de 3.5,'3.25
+Resultado Final/Total de gols (3.5),2 e Mais de 3.5,'9.00
+Resultado Final/Total de gols (3.5),2 e Menos de 3.5,'3.20
+Resultado Final/Total de gols (3.5),X e Mais de 3.5,'12.50
+Resultado Final/Total de gols (3.5),X e Menos de 3.5,'3.80
+Resultado Final/Total de gols (4.5),1 e Mais de 4.5,'17.00
+Resultado Final/Total de gols (4.5),1 e Menos de 4.5,'2.85
+Resultado Final/Total de gols (4.5),2 e Mais de 4.5,'15.00
+Resultado Final/Total de gols (4.5),2 e Menos de 4.5,'2.77
+Resultado Final/Total de gols (4.5),X e Mais de 4.5,'65.00
+Resultado Final/Total de gols (4.5),X e Menos de 4.5,'3.10
+Resultado Final/Total de gols (5.5),1 e Mais de 5.5,'45.00
+Resultado Final/Total de gols (5.5),1 e Menos de 5.5,'2.60
+Resultado Final/Total de gols (5.5),2 e Mais de 5.5,'40.00
+Resultado Final/Total de gols (5.5),2 e Menos de 5.5,'2.50
+Resultado Final/Total de gols (5.5),X e Mais de 5.5,'60.00
+Resultado Final/Total de gols (5.5),X e Menos de 5.5,'3.10
+Resultado Final & Ambas equipes Marcam,Vasco da Gama / Sim,'5.70
+Resultado Final & Ambas equipes Marcam,Vasco da Gama / Não,'4.30
+Resultado Final & Ambas equipes Marcam,Empate / Sim,'4.35
+Resultado Final & Ambas equipes Marcam,Empate / Não,'7.70
+Resultado Final & Ambas equipes Marcam,Cruzeiro / Sim,'5.30
+Resultado Final & Ambas equipes Marcam,Cruzeiro / Não,'4.20
+Resultado Final ou Total de Gols Mais/Menos 2.5,2 ou Menos de 2|5,'1.23
+Resultado Final ou Total de Gols Mais/Menos 2.5,1 ou Menos de 2|5,'1.25
+Resultado Final ou Total de Gols Mais/Menos 2.5,X ou Mais de 2.5,'1.37
+Resultado Final ou Total de Gols Mais/Menos 2.5,X ou Menos de 2|5,'1.42
+Resultado Final ou Total de Gols Mais/Menos 2.5,1 ou Mais de 2.5,'1.47
+Resultado Final ou Total de Gols Mais/Menos 2.5,2 ou Mais de 2.5,'1.47
+Resultado Final ou Ambas equipes Marcam,1 ou Ambos Marcam,'1.31
+Resultado Final ou Ambas equipes Marcam,1 ou Ambos Não Marcam,'1.40
+Resultado Final ou Ambas equipes Marcam,X ou Ambos Marcam,'1.50
+Resultado Final ou Ambas equipes Marcam,X ou Ambos Não Marcam,'1.32
+Resultado Final ou Ambas equipes Marcam,2 ou Ambos Marcam,'1.30
+Resultado Final ou Ambas equipes Marcam,2 ou Ambos Não Marcam,'1.38
+Ambas equipes Marcam & Total de gols (2.5),Sim e Mais de 2.5,'2.47
+Ambas equipes Marcam & Total de gols (2.5),Não e Mais de 2.5,'11.25
+Ambas equipes Marcam & Total de gols (2.5),Sim e Menos de 2.5,'6.40
+Ambas equipes Marcam & Total de gols (2.5),Não e Menos de 2.5,'2.12
+Ambas equipes Marcam & Total de gols (3.5),Sim e Mais de 3.5,'4.10
+Ambas equipes Marcam & Total de gols (3.5),Não e Mais de 3.5,'35.00
+Ambas equipes Marcam & Total de gols (3.5),Sim e Menos de 3.5,'2.95
+Ambas equipes Marcam & Total de gols (3.5),Não e Menos de 3.5,'1.93
+Ambas equipes Marcam & Total de gols (4.5),Sim e Mais de 4.5,'8.00
+Ambas equipes Marcam & Total de gols (4.5),Não e Mais de 4.5,'120.00
+Ambas equipes Marcam & Total de gols (4.5),Sim e Menos de 4.5,'2.20
+Ambas equipes Marcam & Total de gols (4.5),Não e Menos de 4.5,'1.85
+Ambas equipes Marcam & Total de gols (5.5),Sim e Mais de 5.5,'17.50
+Ambas equipes Marcam & Total de gols (5.5),Não e Mais de 5.5,'450.00
+Ambas equipes Marcam & Total de gols (5.5),Sim e Menos de 5.5,'1.93
+Ambas equipes Marcam & Total de gols (5.5),Não e Menos de 5.5,'1.82
+Resultado do 1° Tempo,Vasco da Gama,'3.40
+Resultado do 1° Tempo,Empate,'2.00
+Resultado do 1° Tempo,Cruzeiro,'3.25
+Total de gols Mais/Menos - 1° Tempo,Mais de 0.5,'1.52
+Total de gols Mais/Menos - 1° Tempo,Menos de 0.5,'2.57
+Total de gols Mais/Menos - 1° Tempo,Mais de 1.5,'3.25
+Total de gols Mais/Menos - 1° Tempo,Menos de 1.5,'1.35
+Total de gols Mais/Menos - 1° Tempo,Mais de 2.5,'8.00
+Total de gols Mais/Menos - 1° Tempo,Menos de 2.5,'1.08
+Total de gols Mais/Menos - 1° Tempo,Mais de 3.5,'15.50
+Total de gols Mais/Menos - 1° Tempo,Menos de 3.5,'1.01
+Intervalo/Final,1/1,'4.55
+Intervalo/Final,1/X,'15.00
+Intervalo/Final,1/2,'35.00
+Intervalo/Final,X/1,'6.10
+Intervalo/Final,X/X,'4.60
+Intervalo/Final,X/2,'5.80
+Intervalo/Final,2/1,'35.00
+Intervalo/Final,2/X,'14.00
+Intervalo/Final,2/2,'4.30
+Total de gols (alternativas),0-1,'3.00
+Total de gols (alternativas),2-3,'1.95
+Total de gols (alternativas),4-6,'3.90
+Total de gols (alternativas),7+,'17.50
+Total de gols,0-2,'1.70
+Total de gols,0-3,'1.26
+Total de gols,0-4,'1.09
+Total de gols,1-2,'1.83
+Total de gols,1-3,'1.36
+Total de gols,1-4,'1.19
+Total de gols,1-5,'1.12
+Total de gols,2-4,'1.52
+Total de gols,2-5,'1.40
+Total de gols,2-6,'1.36
+Total de gols,3-4,'2.42
+Total de gols,3-5,'2.12
+Total de gols,3-6,'2.02
+Total de gols,5-6,'7.30
+Margem de Vitória,Vasco da Gama ganhar por exatamente 1 gol,'4.25
+Margem de Vitória,Vasco da Gama Ganhar por exatamente 2 gols,'7.50
+Margem de Vitória,Vasco da Gama Ganhar por 3 ou mais gols,'14.50
+Margem de Vitória,Empate,'3.25
+Margem de Vitória,Cruzeiro ganhar por exatamente 1 gol,'4.15
+Margem de Vitória,Cruzeiro Ganhar por exatamente 2 gols,'7.20
+Margem de Vitória,Cruzeiro Ganhar por 3 ou mais gols,'13.50
+Handicap de linha asiática (Resultado atual 0 - 0),Vasco da Gama 0.0,'1.98
+Handicap de linha asiática (Resultado atual 0 - 0),Cruzeiro 0.0,'1.88
+Asiático (Mais/Menos) Total de gols,Mais de 2.25,'1.95
+Asiático (Mais/Menos) Total de gols,Menos de 2.25,'1.93
+Handicap de linha asiática - 1° Tempo (Resultado atual 0 - 0),Vasco da Gama 0.0,'1.98
+Handicap de linha asiática - 1° Tempo (Resultado atual 0 - 0),Cruzeiro 0.0,'1.88
+Asiático (Mais/Menos) - Total de gols - 1° Tempo,Mais de 0.75,'1.72
+Asiático (Mais/Menos) - Total de gols - 1° Tempo,Menos de 0.75,'2.18
+Próximo gol (Gol 1),Vasco da Gama,'2.12
+Próximo gol (Gol 1),Sem Gol,'7.70
+Próximo gol (Gol 1),Cruzeiro,'2.00
+Vasco da Gama - Total de Gols Mais/Menos,Mais de 0.5,'1.37
+Vasco da Gama - Total de Gols Mais/Menos,Menos de 0.5,'2.95
+Vasco da Gama - Total de Gols Mais/Menos,Mais de 1.5,'2.67
+Vasco da Gama - Total de Gols Mais/Menos,Menos de 1.5,'1.44
+Vasco da Gama - Total de Gols Mais/Menos,Mais de 2.5,'6.00
+Vasco da Gama - Total de Gols Mais/Menos,Menos de 2.5,'1.11
+Vasco da Gama - Total de Gols Mais/Menos,Mais de 3.5,'11.00
+Vasco da Gama - Total de Gols Mais/Menos,Menos de 3.5,'1.02
+Cruzeiro - Total de Gols Mais/Menos,Mais de 0.5,'1.36
+Cruzeiro - Total de Gols Mais/Menos,Menos de 0.5,'3.00
+Cruzeiro - Total de Gols Mais/Menos,Mais de 1.5,'2.57
+Cruzeiro - Total de Gols Mais/Menos,Menos de 1.5,'1.47
+Cruzeiro - Total de Gols Mais/Menos,Mais de 2.5,'5.70
+Cruzeiro - Total de Gols Mais/Menos,Menos de 2.5,'1.12
+Cruzeiro - Total de Gols Mais/Menos,Mais de 3.5,'10.50
+Cruzeiro - Total de Gols Mais/Menos,Menos de 3.5,'1.02
+Escanteios Mais/Menos,Mais de 10.5,'1.87
+Escanteios Mais/Menos,Menos de 10.5,'1.87
